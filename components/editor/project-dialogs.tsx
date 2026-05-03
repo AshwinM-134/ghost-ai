@@ -42,7 +42,7 @@ export function ProjectDialogs(props: DialogsProps) {
     <>
       {/* Create Project */}
       <Dialog open={dialog.type === "create"} onOpenChange={(o) => !o && close()}>
-        <DialogContent className="sm:max-w-md" showCloseButton={false}>
+        <DialogContent className="sm:max-w-md rounded-3xl" showCloseButton={false}>
           <DialogHeader>
             <DialogTitle>New Project</DialogTitle>
             <DialogDescription>Give your project a name to get started.</DialogDescription>
@@ -61,7 +61,7 @@ export function ProjectDialogs(props: DialogsProps) {
               </p>
             )}
           </div>
-          <DialogFooter>
+          <DialogFooter className="bg-transparent border-t-0 mx-0 mb-0 rounded-none p-0 pt-2">
             <Button variant="ghost" onClick={close} disabled={loading}>
               Cancel
             </Button>
@@ -74,7 +74,7 @@ export function ProjectDialogs(props: DialogsProps) {
 
       {/* Rename Project */}
       <Dialog open={dialog.type === "rename"} onOpenChange={(o) => !o && close()}>
-        <DialogContent className="sm:max-w-md" showCloseButton={false}>
+        <DialogContent className="sm:max-w-md rounded-3xl" showCloseButton={false}>
           <DialogHeader>
             <DialogTitle>Rename Project</DialogTitle>
             {dialog.type === "rename" && (
@@ -92,7 +92,7 @@ export function ProjectDialogs(props: DialogsProps) {
               onKeyDown={(e) => e.key === "Enter" && submitRename()}
             />
           </div>
-          <DialogFooter>
+          <DialogFooter className="bg-transparent border-t-0 mx-0 mb-0 rounded-none p-0 pt-2">
             <Button variant="ghost" onClick={close} disabled={loading}>
               Cancel
             </Button>
@@ -105,7 +105,7 @@ export function ProjectDialogs(props: DialogsProps) {
 
       {/* Delete Project */}
       <Dialog open={dialog.type === "delete"} onOpenChange={(o) => !o && close()}>
-        <DialogContent className="sm:max-w-md" showCloseButton={false}>
+        <DialogContent className="sm:max-w-md rounded-3xl" showCloseButton={false}>
           <DialogHeader>
             <DialogTitle>Delete Project</DialogTitle>
             {dialog.type === "delete" && (
@@ -115,7 +115,7 @@ export function ProjectDialogs(props: DialogsProps) {
               </DialogDescription>
             )}
           </DialogHeader>
-          <DialogFooter>
+          <DialogFooter className="bg-transparent border-t-0 mx-0 mb-0 rounded-none p-0 pt-2">
             <Button variant="ghost" onClick={close} disabled={loading}>
               Cancel
             </Button>
