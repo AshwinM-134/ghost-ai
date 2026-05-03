@@ -9,9 +9,34 @@ change.
 
 ## Current Goal
 
-- Feature 02 (TBD)
+- Feature 05 (TBD)
 
 ## Completed
+
+- **Feature 04: Project Dialogs**
+  - `lib/mock-projects.ts` — `Project` interface + 3 mock projects (2 owned, 1 shared)
+  - `hooks/use-project-dialogs.ts` — dialog state, form state, loading state, slug generation
+  - `hooks/use-editor-dialogs-context.ts` — React context + `useEditorDialogs` hook for page-level access
+  - `components/editor/project-dialogs.tsx` — Create (with live slug preview), Rename (auto-focus, Enter submits), Delete (destructive) dialogs
+  - `app/editor/page.tsx` — editor home with heading, description, New Project button
+  - `components/editor/project-sidebar.tsx` — project list items, owned-only rename/delete actions (popover menu), mobile backdrop scrim
+  - `components/editor/editor-shell.tsx` — wires `useProjectDialogs`, provides `EditorDialogsContext`, renders `ProjectDialogs`
+  - TypeScript and lint pass clean
+
+- **Feature 03: Auth**
+  - `@clerk/ui` installed
+  - `proxy.ts` created at root — protected-first strategy using `NEXT_PUBLIC_CLERK_SIGN_IN_URL` / `NEXT_PUBLIC_CLERK_SIGN_UP_URL` env vars
+  - `app/layout.tsx` wraps root with `ClerkProvider` using `dark` theme from `@clerk/ui/themes`, CSS variables applied for colors/font/radius
+  - `app/page.tsx` redirects authenticated users to `/editor`, unauthenticated to `/sign-in`
+  - `app/sign-in/[[...sign-in]]/page.tsx` — two-panel layout (logo+tagline+features left, Clerk form right); form-only on small screens
+  - `app/sign-up/[[...sign-up]]/page.tsx` — same two-panel layout
+  - `UserButton` added to editor navbar right section
+  - `npm run build` passes clean
+
+- **Feature 02: Editor chrome**
+  - `components/editor/editor-navbar.tsx` — fixed-height navbar with sidebar toggle (`PanelLeftOpen`/`PanelLeftClose`), left/center/right sections, dark background + bottom border
+  - `components/editor/project-sidebar.tsx` — floating overlay sidebar (does not push content), slides in from left, Projects header + close button, My Projects / Shared tabs with empty states, full-width New Project button at bottom
+  - TypeScript compiles clean, no lint errors
 
 - **Feature 01: Design system**
   - shadcn/ui initialized (base-nova preset, Tailwind v4, CSS variables)
@@ -29,7 +54,7 @@ change.
 
 ## Next Up
 
-- Feature 02 (TBD)
+- Feature 05 (TBD)
 
 ## Open Questions
 
