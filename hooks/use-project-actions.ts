@@ -27,14 +27,16 @@ export function useProjectActions() {
   const params = useParams();
   const [dialog, setDialog] = useState<DialogState>({ type: "none" });
   const [createName, setCreateName] = useState("");
+  const [createSuffix, setCreateSuffix] = useState("");
   const [renameName, setRenameName] = useState("");
   const [loading, setLoading] = useState(false);
 
   const createSlug = toSlug(createName);
-  const createRoomId = createSlug ? `${createSlug}-${shortSuffix()}` : "";
+  const createRoomId = createSlug ? `${createSlug}-${createSuffix}` : "";
 
   function openCreate() {
     setCreateName("");
+    setCreateSuffix(shortSuffix());
     setDialog({ type: "create" });
   }
 
