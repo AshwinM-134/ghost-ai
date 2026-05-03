@@ -49,7 +49,7 @@ Ghost AI lets teams go from a natural language description to a structured archi
 
 ## Quick Start
 
-**Prerequisites:** Node.js 18+, npm, a PostgreSQL database
+**Prerequisites:** Node.js 20.19.0+, npm, a PostgreSQL database
 
 ```bash
 # Clone the repository
@@ -60,7 +60,7 @@ cd ghost-ai
 npm install
 
 # Copy the example env file and fill in your values
-cp .env.example .env.local
+cp .env.example .env.local  # then edit .env.local with your real credentials
 
 # Apply the database migration and generate the Prisma client
 npx prisma migrate deploy
