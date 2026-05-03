@@ -9,9 +9,19 @@ change.
 
 ## Current Goal
 
-- Feature 02: Editor chrome (navbar + sidebar)
+- Feature 03: Auth (Clerk)
 
 ## Completed
+
+- **Feature 03: Auth**
+  - `@clerk/ui` installed
+  - `proxy.ts` created at root — protected-first strategy using `NEXT_PUBLIC_CLERK_SIGN_IN_URL` / `NEXT_PUBLIC_CLERK_SIGN_UP_URL` env vars
+  - `app/layout.tsx` wraps root with `ClerkProvider` using `dark` theme from `@clerk/ui/themes`, CSS variables applied for colors/font/radius
+  - `app/page.tsx` redirects authenticated users to `/editor`, unauthenticated to `/sign-in`
+  - `app/sign-in/[[...sign-in]]/page.tsx` — two-panel layout (logo+tagline+features left, Clerk form right); form-only on small screens
+  - `app/sign-up/[[...sign-up]]/page.tsx` — same two-panel layout
+  - `UserButton` added to editor navbar right section
+  - `npm run build` passes clean
 
 - **Feature 02: Editor chrome**
   - `components/editor/editor-navbar.tsx` — fixed-height navbar with sidebar toggle (`PanelLeftOpen`/`PanelLeftClose`), left/center/right sections, dark background + bottom border
@@ -34,7 +44,7 @@ change.
 
 ## Next Up
 
-- Feature 03 (TBD)
+- Feature 04 (TBD)
 
 ## Open Questions
 
