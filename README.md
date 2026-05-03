@@ -15,13 +15,13 @@ A real-time collaborative system design workspace. Describe a system in plain En
 
 ---
 
-## ✨ Introduction
+## Introduction
 
 Ghost AI lets teams go from a natural language description to a structured architecture diagram in seconds. An AI agent generates nodes and edges on a shared canvas, collaborators refine the design in real time, and the app exports a Markdown technical specification from the final graph.
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Layer            | Technology              |
 | ---------------- | ----------------------- |
@@ -35,7 +35,7 @@ Ghost AI lets teams go from a natural language description to a structured archi
 
 ---
 
-## 🔋 Features
+## Features
 
 - **AI Architecture Generation** — generate system designs from a natural language prompt
 - **Real-time Collaboration** — shared canvas with live cursors and presence indicators
@@ -45,7 +45,7 @@ Ghost AI lets teams go from a natural language description to a structured archi
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 **Prerequisites:** Node.js 18+, npm
 
@@ -65,7 +65,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📜 Available Scripts
+## Available Scripts
 
 | Script          | Description                        |
 | --------------- | ---------------------------------- |
@@ -76,15 +76,16 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 ghost-ai/
 ├── app/                  # Next.js App Router — pages and API routes
 │   ├── api/              # Route handlers
 │   ├── globals.css       # Design tokens and base styles
 │   └── layout.tsx        # Root layout with fonts
 ├── components/
+│   ├── editor/           # Editor chrome components (navbar, shell, sidebar)
 │   └── ui/               # shadcn/ui primitive components
 ├── lib/                  # Shared utilities and infrastructure
 ├── trigger/              # Durable background tasks and AI workflows
