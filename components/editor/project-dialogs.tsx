@@ -20,7 +20,7 @@ export function ProjectDialogs(props: DialogsProps) {
     dialog,
     createName,
     setCreateName,
-    createSlug,
+    createRoomId,
     renameName,
     setRenameName,
     loading,
@@ -58,7 +58,7 @@ export function ProjectDialogs(props: DialogsProps) {
             />
             {createName.trim() && (
               <p className="text-xs text-copy-muted font-mono">
-                slug: <span className="text-copy-secondary">{createSlug}</span>
+                slug: <span className="text-copy-secondary">{createRoomId}</span>
               </p>
             )}
           </div>

@@ -116,7 +116,7 @@ export function useProjectActions() {
     dialog,
     createName,
     setCreateName,
-    createSlug: createRoomId,
+    createRoomId,
     renameName,
     setRenameName,
     loading,
