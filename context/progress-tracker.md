@@ -9,9 +9,15 @@ change.
 
 ## Current Goal
 
-- Feature 05 (TBD)
+- Feature 06 (TBD)
 
 ## Completed
+
+- **Feature 05: Prisma Models + Client**
+  - `prisma/models/project.prisma` — Project (ownerId, name, description, status enum DRAFT/ARCHIVED, canvasJsonPath, timestamps, indexes on ownerId and createdAt) + ProjectCollaborator (cascade delete, unique project/email, indexes on email and projectId+createdAt)
+  - `lib/prisma.ts` — cached singleton, Accelerate branch for `prisma+postgres://`, pg adapter otherwise, `global` cache for dev hot reloads, fails fast on missing DATABASE_URL
+  - Migration `init` applied, client generated to `app/generated/prisma/`
+  - `npm run build` passes
 
 - **Feature 04: Project Dialogs**
   - `lib/mock-projects.ts` — `Project` interface + 3 mock projects (2 owned, 1 shared)
@@ -54,7 +60,7 @@ change.
 
 ## Next Up
 
-- Feature 05 (TBD)
+- Feature 06 (TBD)
 
 ## Open Questions
 

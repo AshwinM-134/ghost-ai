@@ -1,4 +1,4 @@
-import { PrismaClient } from "../app/generated/prisma";
+import { PrismaClient } from "../app/generated/prisma/client";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { PrismaPg } from "@prisma/adapter-pg";
 
@@ -12,7 +12,7 @@ function createPrismaClient(): PrismaClient {
   if (!url) throw new Error("DATABASE_URL environment variable is not set");
 
   if (url.startsWith("prisma+postgres://")) {
-    return new PrismaClient().$extends(withAccelerate()) as unknown as PrismaClient;
+    return new PrismaClient({ accelerateUrl: url }).$extends(withAccelerate()) as unknown as PrismaClient;
   }
 
   const adapter = new PrismaPg({ connectionString: url });
