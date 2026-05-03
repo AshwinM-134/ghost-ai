@@ -9,9 +9,14 @@ change.
 
 ## Current Goal
 
-- Feature 02 (TBD)
+- Feature 02: Editor chrome (navbar + sidebar)
 
 ## Completed
+
+- **Feature 02: Editor chrome**
+  - `components/editor/editor-navbar.tsx` — fixed-height navbar with sidebar toggle (`PanelLeftOpen`/`PanelLeftClose`), left/center/right sections, dark background + bottom border
+  - `components/editor/project-sidebar.tsx` — floating overlay sidebar (does not push content), slides in from left, Projects header + close button, My Projects / Shared tabs with empty states, full-width New Project button at bottom
+  - TypeScript compiles clean, no lint errors
 
 - **Feature 01: Design system**
   - shadcn/ui initialized (base-nova preset, Tailwind v4, CSS variables)
@@ -29,7 +34,7 @@ change.
 
 ## Next Up
 
-- Feature 02 (TBD)
+- Feature 03 (TBD)
 
 ## Open Questions
 
