@@ -9,9 +9,19 @@ change.
 
 ## Current Goal
 
-- Feature 03: Auth (Clerk)
+- Feature 05 (TBD)
 
 ## Completed
+
+- **Feature 04: Project Dialogs**
+  - `lib/mock-projects.ts` — `Project` interface + 3 mock projects (2 owned, 1 shared)
+  - `hooks/use-project-dialogs.ts` — dialog state, form state, loading state, slug generation
+  - `hooks/use-editor-dialogs-context.ts` — React context + `useEditorDialogs` hook for page-level access
+  - `components/editor/project-dialogs.tsx` — Create (with live slug preview), Rename (auto-focus, Enter submits), Delete (destructive) dialogs
+  - `app/editor/page.tsx` — editor home with heading, description, New Project button
+  - `components/editor/project-sidebar.tsx` — project list items, owned-only rename/delete actions (popover menu), mobile backdrop scrim
+  - `components/editor/editor-shell.tsx` — wires `useProjectDialogs`, provides `EditorDialogsContext`, renders `ProjectDialogs`
+  - TypeScript and lint pass clean
 
 - **Feature 03: Auth**
   - `@clerk/ui` installed
@@ -44,7 +54,7 @@ change.
 
 ## Next Up
 
-- Feature 04 (TBD)
+- Feature 05 (TBD)
 
 ## Open Questions
 
