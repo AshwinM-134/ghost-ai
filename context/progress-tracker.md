@@ -1,0 +1,47 @@
+# Progress Tracker
+
+Update this file after every meaningful implementation
+change.
+
+## Current Phase
+
+- In Progress
+
+## Current Goal
+
+- Feature 02 (TBD)
+
+## Completed
+
+- **Feature 01: Design system**
+  - shadcn/ui initialized (base-nova preset, Tailwind v4, CSS variables)
+  - Components added to `components/ui/`: Button, Card, Dialog, Input, Tabs, Textarea, ScrollArea
+  - `lucide-react` installed
+  - `lib/utils.ts` created with `cn()` helper (clsx + tailwind-merge)
+  - `app/globals.css` rewritten with project design tokens (`--bg-base`, `--text-primary`, etc.) mapped to shadcn variables and Tailwind utility names
+  - Removed `.dark` class block and `@custom-variant dark` — dark-only, no class switching
+  - `app/layout.tsx` loads Geist Sans (`--font-geist-sans`) and Geist Mono (`--font-geist-mono`)
+  - TypeScript compiles clean
+
+## In Progress
+
+- None.
+
+## Next Up
+
+- Feature 02 (TBD)
+
+## Open Questions
+
+- None.
+
+## Architecture Decisions
+
+- Using shadcn/ui (base-nova preset) on Tailwind v4 + Next.js 16. Components use `@base-ui/react` primitives (not Radix). Components live in `components/ui/` and must not be modified after installation.
+- Dark-only theme: all CSS variables live in `:root` only. No `.dark` class, no `@custom-variant dark`, no light mode.
+
+## Session Notes
+
+- **Next.js** 16.2.4 | **React** 19.2.4 | **Tailwind CSS** 4.2.4
+- **shadcn** 4.6.0 — `--defaults` selected the Nova preset (Lucide/Geist, base-ui primitives)
+- **lucide-react** 1.14.0
