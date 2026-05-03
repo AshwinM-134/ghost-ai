@@ -5,13 +5,29 @@ change.
 
 ## Current Phase
 
-- In Progress
+- Completed
 
 ## Current Goal
 
-- Feature 06 (TBD)
+- Feature 07: Wire Editor Home ✓
 
 ## Completed
+
+- **Feature 07: Wire Editor Home**
+  - `lib/projects.ts` — `getProjectData()` server helper; fetches owned projects by `ownerId`, shared by collaborator email via `currentUser()`; returns `ProjectRow[]` with `owned` boolean
+  - `app/api/projects/route.ts` — POST now accepts optional `id` field so client-generated room IDs stay aligned with Liveblocks
+  - `hooks/use-project-actions.ts` — replaces `use-project-dialogs`; manages dialog state + real API calls; create slugifies name + generates short suffix for room ID, navigates to `/editor/[id]`; rename calls `PATCH` and refreshes; delete calls `DELETE`, redirects to `/editor` if active workspace, otherwise refreshes
+  - `hooks/use-editor-dialogs-context.ts` — updated to reference `useProjectActions`
+  - `components/editor/project-sidebar.tsx` — accepts `ownedProjects`/`sharedProjects` props; removed `MOCK_PROJECTS` dependency
+  - `components/editor/editor-shell.tsx` — accepts project data props, passes to sidebar; uses `useProjectActions`
+  - `app/editor/layout.tsx` — converted to async server component; fetches project data via `getProjectData()`, passes to `EditorShell`
+  - `npm run build` passes
+
+- **Feature 06: Project APIs**
+  - `lib/project-auth.ts` — `requireProjectOwner` helper; throws `NotFoundError` / `ForbiddenError`
+  - `app/api/projects/route.ts` — `GET` lists owner's projects; `POST` creates (defaults name to "Untitled Project")
+  - `app/api/projects/[projectId]/route.ts` — `PATCH` renames (owner-only); `DELETE` deletes (owner-only); 401 for unauthenticated, 403 for non-owner
+  - `npm run build` passes
 
 - **Feature 05: Prisma Models + Client**
   - `prisma/models/project.prisma` — Project (ownerId, name, description, status enum DRAFT/ARCHIVED, canvasJsonPath, timestamps, indexes on ownerId and createdAt) + ProjectCollaborator (cascade delete, unique project/email, indexes on email and projectId+createdAt)
@@ -60,7 +76,7 @@ change.
 
 ## Next Up
 
-- Feature 06 (TBD)
+- Feature 08 (TBD)
 
 ## Open Questions
 

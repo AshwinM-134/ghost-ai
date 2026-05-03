@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { type useProjectDialogs } from "@/hooks/use-project-dialogs";
+import { type useProjectActions } from "@/hooks/use-project-actions";
 
-type DialogsProps = ReturnType<typeof useProjectDialogs>;
+type DialogsProps = ReturnType<typeof useProjectActions>;
 
 export function ProjectDialogs(props: DialogsProps) {
   const {
