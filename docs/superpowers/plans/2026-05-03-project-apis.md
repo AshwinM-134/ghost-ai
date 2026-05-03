@@ -52,7 +52,7 @@ export async function requireProjectOwner(
 - [ ] **Step 2: Verify TypeScript compiles**
 
 ```bash
-cd /Users/ashwin/Developer/01_Projects/personal/ghost-ai && npx tsc --noEmit
+npx tsc --noEmit
 ```
 
 Expected: no errors.
@@ -111,7 +111,7 @@ export async function POST(request: Request) {
 - [ ] **Step 2: Verify TypeScript compiles**
 
 ```bash
-cd /Users/ashwin/Developer/01_Projects/personal/ghost-ai && npx tsc --noEmit
+npx tsc --noEmit
 ```
 
 Expected: no errors.
@@ -191,7 +191,7 @@ export async function DELETE(_request: Request, { params }: Params) {
 - [ ] **Step 2: Verify TypeScript compiles**
 
 ```bash
-cd /Users/ashwin/Developer/01_Projects/personal/ghost-ai && npx tsc --noEmit
+npx tsc --noEmit
 ```
 
 Expected: no errors.
@@ -199,7 +199,7 @@ Expected: no errors.
 - [ ] **Step 3: Verify build passes**
 
 ```bash
-cd /Users/ashwin/Developer/01_Projects/personal/ghost-ai && npm run build
+npm run build
 ```
 
 Expected: Build completes with no errors.
