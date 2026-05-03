@@ -4,14 +4,16 @@ import { useState } from "react";
 import { X, Plus, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { MOCK_PROJECTS, type Project } from "@/lib/mock-projects";
+import { type ProjectRow } from "@/lib/projects";
 
 interface ProjectSidebarProps {
   isOpen: boolean;
   onClose: () => void;
   onOpenCreate: () => void;
-  onRename: (project: Project) => void;
-  onDelete: (project: Project) => void;
+  onRename: (project: ProjectRow) => void;
+  onDelete: (project: ProjectRow) => void;
+  ownedProjects: ProjectRow[];
+  sharedProjects: ProjectRow[];
 }
 
 function ProjectItem({
@@ -19,9 +21,9 @@ function ProjectItem({
   onRename,
   onDelete,
 }: {
-  project: Project;
-  onRename: (p: Project) => void;
-  onDelete: (p: Project) => void;
+  project: ProjectRow;
+  onRename: (p: ProjectRow) => void;
+  onDelete: (p: ProjectRow) => void;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -83,10 +85,9 @@ export function ProjectSidebar({
   onOpenCreate,
   onRename,
   onDelete,
+  ownedProjects,
+  sharedProjects,
 }: ProjectSidebarProps) {
-  const myProjects = MOCK_PROJECTS.filter((p) => p.owned);
-  const sharedProjects = MOCK_PROJECTS.filter((p) => !p.owned);
-
   return (
     <>
       {/* Mobile backdrop scrim */}
@@ -130,13 +131,13 @@ export function ProjectSidebar({
             </TabsList>
 
             <TabsContent value="my-projects" className="flex-1 overflow-y-auto">
-              {myProjects.length === 0 ? (
+              {ownedProjects.length === 0 ? (
                 <div className="flex items-center justify-center h-24 text-copy-faint text-sm">
                   No projects yet
                 </div>
               ) : (
                 <div className="space-y-0.5">
-                  {myProjects.map((p) => (
+                  {ownedProjects.map((p) => (
                     <ProjectItem key={p.id} project={p} onRename={onRename} onDelete={onDelete} />
                   ))}
                 </div>
