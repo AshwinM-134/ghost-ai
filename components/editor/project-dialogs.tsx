@@ -58,7 +58,7 @@ export function ProjectDialogs(props: DialogsProps) {
             />
             {createName.trim() && (
               <p className="text-xs text-copy-muted font-mono">
-                slug: <span className="text-copy-secondary">{createRoomId}</span>
+                id: <span className="text-copy-secondary">{createRoomId}</span>
               </p>
             )}
           </div>
