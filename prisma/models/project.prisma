@@ -15,8 +15,7 @@ model Project {
 
   collaborators ProjectCollaborator[]
 
-  @@index([ownerId])
-  @@index([createdAt])
+  @@index([ownerId, createdAt])
   @@map("projects")
 }
 
