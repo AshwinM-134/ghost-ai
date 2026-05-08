@@ -19,6 +19,8 @@ A real-time collaborative system design workspace. Describe a system in plain En
 
 Ghost AI lets teams go from a natural language description to a structured architecture diagram in seconds. An AI agent generates nodes and edges on a shared canvas, collaborators refine the design in real time, and the app exports a Markdown technical specification from the final graph.
 
+![Ghost AI System Architecture](ghost-ai-architecture.png)
+
 ---
 
 ## Tech Stack
